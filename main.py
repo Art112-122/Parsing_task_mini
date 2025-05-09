@@ -26,4 +26,3 @@ async def parse_url(url: HttpUrl = Query(..., description="URL to parse")) -> Di
 
 if __name__ == "__main__":
     uvicorn.run("main:app", port=8006, reload=True)
-
