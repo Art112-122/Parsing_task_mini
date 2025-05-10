@@ -29,3 +29,4 @@ async def anime(
     url = f"{BASIC_URL}{category}/"
     answer = await get_anime(url=url)
     return answer
+

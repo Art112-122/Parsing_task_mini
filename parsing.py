@@ -4,6 +4,7 @@ from fastapi import HTTPException
 
 BASIC_URL = "https://jut.su"
 
+
 async def get_url(url, _class: str | None = None, tag: str | None = None):
     async with httpx.AsyncClient() as client:
         response = await client.get(url)
