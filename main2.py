@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException, Query
 import uvicorn
 from typing import Literal
-from parsing import get_url, get_anime, get_anime_info
+from parsing2 import get_url, get_anime, get_anime_info
 app = FastAPI(title="Parse anime")
 BASIC_URL = "https://jut.su/anime/"
 @app.get("/parse/")
