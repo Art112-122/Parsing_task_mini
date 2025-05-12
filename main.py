@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, Query
 import uvicorn
 from typing import Literal
 from parsing import get_url, get_anime, get_anime_info
@@ -25,7 +25,7 @@ async def anime(
 
 
 @app.get("/anime/info/")
-async def anime_info(title: str = Query(..., description="Название аниме")):
+async def anime_info(title: str = Query(..., description="Anime title")):
     answer = await get_anime_info(title)
     return answer
 
