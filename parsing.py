@@ -31,7 +31,7 @@ async def get_anime(url):
         if response.status_code == 200:
             soup = BeautifulSoup(response.text, 'html.parser')
             answer = soup.find_all("span", class_="the_invis")
-            return {"answer": [f"{i} {a.text}: {BASIC_URL}{a.find('a').get('href')}" for i, a in enumerate(answer, 1)]}
+            return {"answer": [f"{i} {a.text} / {a.find('a').get('href').replace('/', '')}" for i, a in enumerate(answer, 1)]}
         raise HTTPException(status_code=response.status_code, detail=response.text)
 
 
